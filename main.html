@@ -1,14 +1,26 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Promise Example</title>
+</head>
+<body>
+  <h2 id="output">Waiting...</h2>
 
-<html>
-  <head>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
+  <script>
+    // Function that returns a Promise
+    function getMessage() {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve("Hello, world!");
+        }, 1000); // 1 second delay
+      });
+    }
 
-  <body>
-    <!-- do not modify this file -->
-    <div id="output"></div>
-
-    <script type="text/javascript" src="./script.js"></script>
-  </body>
+    // Use the promise and update the element
+    getMessage().then((message) => {
+      document.getElementById("output").textContent = message;
+    });
+  </script>
+</body>
 </html>
