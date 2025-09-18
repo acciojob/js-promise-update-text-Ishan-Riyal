@@ -5,19 +5,17 @@
   <title>Promise Example</title>
 </head>
 <body>
-  <h2 id="output">Waiting...</h2>
+  <div id="output">Waiting...</div>
 
   <script>
-    // Function that returns a Promise
     function getMessage() {
       return new Promise((resolve) => {
         setTimeout(() => {
           resolve("Hello, world!");
-        }, 1000); // 1 second delay
+        }, 1000);
       });
     }
 
-    // Use the promise and update the element
     getMessage().then((message) => {
       document.getElementById("output").textContent = message;
     });
